@@ -21,7 +21,7 @@
     };
 
     /*
-     * Num.1 : Methods for obtaining DOM elements
+     * Num.1 : Methods for obtaining DOM elements 获取DOM元素的方法
      */
 
     //getElementsByClass：We get the elements through the style class, solve the getElementsByClassName not compatible in IE6~8
@@ -71,7 +71,7 @@
         return ary;
     };
 
-    //prev：Gets the last element node of the current element
+    //prev：Gets the last element node of the current element获取当前元素的最后一个元素节点
     _utils.prev = function prev(curEle) {
         if ("previousElementSibling" in curEle) {
             return curEle.previousElementSibling;
@@ -84,6 +84,8 @@
     };
 
     //prevAll：Gets all of the elements of the current element for the node
+
+    //获取当前元素的所有元素节点
     _utils.prevAll = function prevAll(curEle) {
         var pre = this.prev(curEle), ary = [];
         while (pre) {
@@ -93,12 +95,12 @@
         return ary;
     };
 
-    //getIndex：Gets the index of the current element
+    //getIndex：Gets the index of the current element获取当前元素的索引
     _utils.getIndex = function getIndex(curEle) {
         return this.prevAll(curEle).length;
     };
 
-    //next：Gets the next younger brother element node of the current element
+    //next：Gets the next younger brother element node of the current element获取当前元素的下一个的兄弟元素节点
     _utils.next = function next(curEle) {
         if ("nextElementSibling" in curEle) {
             return curEle.nextElementSibling;
@@ -134,12 +136,12 @@
         return preA.concat(nexA);
     };
 
-    //first：Gets the first element child node of the current element (you can specify the name of the tag)
+    //first：Gets the first element child node of the current element (you can specify the name of the tag)获取当前元素的第一个元素子节点,你可以指定标签的名称
     _utils.first = function first(curEle, tagName) {
         return this.children(curEle, tagName)[0];
     };
 
-    //last：Gets the last element of the current element and the child node (which can specify the name of the tag)
+    //last：Gets the last element of the current element and the child node (which can specify the name of the tag)获取当前元素的最后一个元素子节点
     _utils.last = function last(curEle, tagName) {
         var child = this.children(curEle, tagName);
         return child[child.length - 1];
@@ -150,7 +152,7 @@
      * Num.2 : Methods for obtaining DOM style
      */
 
-    //css：Gets or sets the style of the current element (third value values are obtained, and the value is set).
+    //css：Gets or sets the style of the current element (third value values are obtained, and the value is set).获取或设置当前元素的样式,第三个值，可以设置值
     _utils.css = function css(curEle, attr, value) {
         //get style
         var reg = /^[+-]?(\d|([1-9]\d+))(\.\d+)?(px|pt|em|rem)$/;

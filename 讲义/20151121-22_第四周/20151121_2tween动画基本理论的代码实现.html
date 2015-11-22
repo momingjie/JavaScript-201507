@@ -10,7 +10,7 @@
 
 <body>
 <div id="div1"></div>
-animate(ele,{left:850,top:500},1500,['zfLinear','easeIn'],callback)
+//animate(ele,{left:850,top:500},1500,['zfLinear','easeIn'],callback)
 //动画名（运动的元素,{运动的方向:目地的},完成此运动的总时间,[动画类型],回调方法)
 </body>
 </html>
@@ -36,11 +36,11 @@ animate(ele,{left:850,top:500},1500,['zfLinear','easeIn'],callback)
 //规定每10ms走一步，也就是说用定时器每隔10ms驱动一次这个动画
 
 var ele=document.getElementById("div1");
-ele.style.left;//不断的给它赋值，每隔10ms赋值一次
+ele.style.left;//不断的给它赋值，每隔15ms赋值一次
 var times=0;//当前消耗的时间
-var duration=900;//ms，规定完成此动画的总时间
-var target=850;//终点
-var begin=150;//起点
+var duration=2000;//ms，规定完成此动画的总时间
+var target=1000;//终点
+var begin=0;//起点
 var change=target-begin;//需要走的距离
 var interval=15;//每走一步的间隔时间
 

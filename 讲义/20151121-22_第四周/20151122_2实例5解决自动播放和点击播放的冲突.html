@@ -35,7 +35,7 @@ var oLis=document.getElementById("btn").getElementsByTagName("li");
 for(var i=0;i<oLis.length;i++){
 	oLis.item(i).i=i;
 	oLis.item(i).onclick=function(){
-		animate(oInner,{left:-this.i*500},700,3);
+		animate(oInner,{left:-this.i*500},700,4);
 		selectCurrent(this);
 		clearInterval(autoTimer);//点击的时候，把自动执行的清除掉
 		autoTimer=window.setInterval(autoRight,2000);//然后过三秒再自动执行
@@ -62,7 +62,7 @@ function autoRight(){
 	step--;
 	if(step<0){
 		oInner.style.left=-2500+"px";
-		step=4;//就是表示：从索引5往索引4上走	
+		step=4;//就是表示：从索引5往索引4上走
 	}
 	
 	animate(oInner,{left:-step*500},600);

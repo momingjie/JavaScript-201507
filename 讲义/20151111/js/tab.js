@@ -14,7 +14,7 @@ var initData = function () {
         curItem.name = curItem.name || "--";
         curItem.age = curItem.age || 22;
         curItem.score = curItem.score || 60;
-        curItem.sex = curItem.sex || 0 ? "男" : "女";
+        curItem.sex = curItem.sex === 0 ? "男" : "女";
         var oTr = document.createElement("tr");
         for (var key in curItem) {
             var oTd = document.createElement("td");

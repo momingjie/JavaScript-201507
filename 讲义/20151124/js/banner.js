@@ -236,7 +236,7 @@ var zhufengEffect = {
 };
 
 var animate = function (curEle, oTarget, duration, effect, callBack) {
-    
+
     //初始化传递进来的参数值,主要处理的是动画的方式
     var fnEffect = zhufengEffect.Expo.easeOut;
     if (typeof effect === "number") {
@@ -384,9 +384,13 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
             window.clearInterval(bannerImg.autoTimer);
             setTip(this.index);
             step = this.index + 1;
+<<<<<<< HEAD
             //animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
             //    bannerImg.autoTimer = window.setInterval(autoMove, 3000);
             //});
+=======
+            animate(bannerImg, {left: -step * bannerW}, 500, 1);
+>>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
         };
     }
 
@@ -401,17 +405,47 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
         bannerLeft.style.display = bannerRight.style.display = "none";
     };
 
+<<<<<<< HEAD
     bannerRight.onclick = autoMove;
     bannerLeft.onclick = function () {
         clearInterval(bannerImg.autoTimer);
+=======
+    var bannerRightFn = function () {
+        window.clearInterval(bannerImg.autoTimer);
+        bannerRight.onclick = null;
+        step++;
+        if (step >= count) {
+            setCss(bannerImg, "left", -1 * bannerW);
+            step = 2;
+        }
+        setTip(step - 1);
+        animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
+            bannerImg.autoTimer = window.setInterval(autoMove, 3000);
+            bannerRight.onclick = bannerRightFn;
+        });
+    };
+    var bannerLeftFn = function () {
+        window.clearInterval(bannerImg.autoTimer);
+        bannerLeft.onclick = null;
+>>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
         step--;
         if (step < 0) {
             setCss(bannerImg, "left", -(count - 2) * bannerW);
             step = 3;
         }
         setTip(step - 1);
+<<<<<<< HEAD
         animate(bannerImg, {left: -step * bannerW}, 500, );
 
 
+=======
+        animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
+            bannerImg.autoTimer = window.setInterval(autoMove, 3000);
+            bannerLeft.onclick = bannerLeftFn;
+        });
+>>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
     };
+
+    bannerRight.onclick = bannerRightFn;
+    bannerLeft.onclick = bannerLeftFn;
 }();

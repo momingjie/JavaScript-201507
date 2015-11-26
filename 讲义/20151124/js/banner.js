@@ -22,8 +22,7 @@ var getElementsByClass = function (strClass, context) {
         var curTag = tagList[i];
         curTag.flag = true;
         for (var j = 0; j < classAry.length; j++) {
-            var reg = new RegExp("(^| +)" + classAry[j] + "( +|$)");
-            if (!reg.test(curTag.className)) {
+             if (!reg.test(curTag.className)) {
                 curTag.flag = false;
                 break;
             }
@@ -35,7 +34,7 @@ var getElementsByClass = function (strClass, context) {
 
 var getCss = function (curEle, attr) {
     var reg = /^[+-]?(\d|([1-9]\d+))(\.\d+)?(px|pt|em|rem)$/, val = null;
-        if ("getComputedStyle" in window) {
+    if ("getComputedStyle" in window) {
         val = window.getComputedStyle(curEle, null)[attr];
     } else {
         if (attr === "opacity") {
@@ -182,7 +181,7 @@ var zhufengEffect = {
                 a = c;
                 var s = p / 4;
             }
-            else var  s = p / (2 * Math.PI) * Math.asin(c / a);
+            else var s = p / (2 * Math.PI) * Math.asin(c / a);
             return (a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b);
         },
         easeInOut: function (t, b, c, d, a, p) {
@@ -384,19 +383,15 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
             window.clearInterval(bannerImg.autoTimer);
             setTip(this.index);
             step = this.index + 1;
-<<<<<<< HEAD
-            //animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
-            //    bannerImg.autoTimer = window.setInterval(autoMove, 3000);
-            //});
-=======
-            animate(bannerImg, {left: -step * bannerW}, 500, 1);
->>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
+            animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
+                bannerImg.autoTimer = window.setInterval(autoMove, 3000);
+            });
         };
     }
 
     //点击左右切换的
     banner.onmouseover = function () {
-        clearInterval(bannerImg.autoTimer);
+        window.clearInterval(bannerImg.autoTimer);
         bannerLeft.style.display = bannerRight.style.display = "block";
     };
 
@@ -405,47 +400,14 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
         bannerLeft.style.display = bannerRight.style.display = "none";
     };
 
-<<<<<<< HEAD
     bannerRight.onclick = autoMove;
     bannerLeft.onclick = function () {
-        clearInterval(bannerImg.autoTimer);
-=======
-    var bannerRightFn = function () {
-        window.clearInterval(bannerImg.autoTimer);
-        bannerRight.onclick = null;
-        step++;
-        if (step >= count) {
-            setCss(bannerImg, "left", -1 * bannerW);
-            step = 2;
-        }
-        setTip(step - 1);
-        animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
-            bannerImg.autoTimer = window.setInterval(autoMove, 3000);
-            bannerRight.onclick = bannerRightFn;
-        });
-    };
-    var bannerLeftFn = function () {
-        window.clearInterval(bannerImg.autoTimer);
-        bannerLeft.onclick = null;
->>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
         step--;
         if (step < 0) {
             setCss(bannerImg, "left", -(count - 2) * bannerW);
             step = 3;
         }
         setTip(step - 1);
-<<<<<<< HEAD
-        animate(bannerImg, {left: -step * bannerW}, 500, );
-
-
-=======
-        animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
-            bannerImg.autoTimer = window.setInterval(autoMove, 3000);
-            bannerLeft.onclick = bannerLeftFn;
-        });
->>>>>>> a75e85ccc5bca9ed3cebc29154d940e230094540
+        animate(bannerImg, {left: -step * bannerW}, 500, 1);
     };
-
-    bannerRight.onclick = bannerRightFn;
-    bannerLeft.onclick = bannerLeftFn;
 }();

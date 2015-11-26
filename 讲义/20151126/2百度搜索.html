@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        input{display: none;
+        outline: none;
+        }
+        .box{
+            margin:50px auto
+            width: 500px;
+        }
+        .box .search{
+            padding: 0 10px;
+            width: 478px;
+            height: 35px;
+            border: 1px solid #11557c;
+        }
+        .box ul{
+            padding: 10px;
+        border: 1px solid #aaddff;
+            line-height: 35px;
+            display: none;
+        }
+        .box ul li{
+            padding: 0 10px;
+            height: 35px;
+            line-height: 35px;
+        }
+        .box ul li.hover{
+            background: #008000;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <input type="text" id="search" class="search"/>
+    <ul id="sarchList">
+        <li>珠峰培训是全国知名的js培训机构</li>
+        <li>周老师是珠峰培训最帅的老师</li>
+        <li>周老师是珠峰培训最帅的老师</li>
+        <li>周老师是珠峰培训最帅的老师</li>
+        <li>周老师是珠峰培训最帅的老师</li>
+    </ul>
+</div>
+
+<script>
+    var search=document.getElementById("search");
+    var sarchList=document.getElementById("searchList");
+    var liList=sarchList.getElementsByTagName("li");
+    for(var i=0;i<liList.length;i++){
+
+    }
+</script>
+</body>
+</html>

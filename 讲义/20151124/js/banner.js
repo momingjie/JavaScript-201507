@@ -380,7 +380,6 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
     for (var i = 0; i < bannerTipList.length; i++) {
         bannerTipList[i].index = i;
         bannerTipList[i].onclick = function () {
-            window.clearInterval(bannerImg.autoTimer);
             setTip(this.index);
             step = this.index + 1;
             animate(bannerImg, {left: -step * bannerW}, 500, 1, function () {
@@ -401,7 +400,11 @@ var animate = function (curEle, oTarget, duration, effect, callBack) {
     };
 
     bannerRight.onclick = autoMove;
+<<<<<<< HEAD
     bannerLeft.onclick = function () {
+=======
+    bannerLeft.onclick = function(){
+>>>>>>> b074bda4419fb5b40395ae478dada7232c2164b5
         step--;
         if (step < 0) {
             setCss(bannerImg, "left", -(count - 2) * bannerW);

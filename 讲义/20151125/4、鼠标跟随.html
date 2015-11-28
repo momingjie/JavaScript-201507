@@ -43,6 +43,9 @@
         }
         mark.style.left = e.clientX + 20 + "px";
         mark.style.top = e.clientY + 20 + "px";
+
+        console.log(e.clientX)
+        console.log(e.clientY)
     };
 
     box.onmousemove = function (e) {
@@ -51,6 +54,7 @@
         if (mark) {
             mark.style.left = e.clientX + 20 + "px";
             mark.style.top = e.clientY + 20 + "px";
+
         }
     };
 

@@ -77,6 +77,8 @@
         //1)计算我们鼠标在中心位置时候的top/left
         var top = e.clientY - boxT - (curEle.offsetHeight / 2), left = e.clientX - boxL - (curEle.offsetWidth / 2);
 
+
+
         //2)边界判断:左边界(left=0) 上边界(top=0) 右边界(left=box.clientWidth-curEle.clientWidth) 下边界(top=box.clientHeight-curEle.clientHeight)
         var rightMax = box.clientWidth - curEle.clientWidth, bottomMax = box.clientHeight - curEle.clientHeight;
         if (left <= 0) {

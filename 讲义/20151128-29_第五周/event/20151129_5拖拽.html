@@ -52,11 +52,12 @@ document.onclick=function(e){
 	fn(e);
 	}*/
 
-function move(e){//进行拖拽
+function move(e){//进行拖拽v
 	//计算盒子的新位置
 	this.style.left=this.x+(e.pageX-this.mx)+"px";
 	this.style.top=this.y+(e.pageY-this.my)+"px";
 	//盒子的新位置=盒子原来的位置+鼠标移动的距离
+
 }
 
 function up(){//结束拖拽

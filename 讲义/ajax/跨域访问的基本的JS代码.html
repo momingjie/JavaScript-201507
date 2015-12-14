@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style type="text/css">
-table,tr,td{ border:2px solid red;}
+ul,li,span{ border:2px solid red;}
 </style>
 </head>
 
@@ -16,8 +16,8 @@ http://www.zhufengpeixun.cn/ajax/jsonphp.php?processFn=fnn
 
 
 
-?processFn=fnn
-fnn('[{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"},{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"},{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"}]')
+<!--?processFn=fnn-->
+<!--fnn('[{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"},{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"},{"id":"36","name": "王大胆" ,"gender":"1" ,"hobby":"睡觉,写代码,打豆豆" ,"age":"33" ,"skill":"CSS,javaScript,PHP,C " ,"class":"随到随学班" ,"remark":"没有备注" ,"date":"2012-11-25 17:13:43"}]')-->
 
 //JSON 只是格式，它可以以字符串的方式存在，也可以以JS对象的方式来存在
 
@@ -45,16 +45,16 @@ obj.toString();//[object Object];
 function fnn(data){
 	console.log(data);
 	var obj=JSON.parse(data);
-	var str="<table>"
+	var str="<ul>"
 	for(var i=0;i<obj.length;i++){
-		str+="<tr>"
+		str+="<li>"
 			for(var attr in obj[i]){
-				str+="<td>"+obj[i][attr]+"</td>"
+				str+="<span>"+obj[i][attr]+"</span>"
 				
 			} 
-		str+="</tr>";
+		str+="</li>";
 	}
-	str+="</table>";
+	str+="</ul>";
 	content.innerHTML=str;
 }
 document.documentElement.onclick=function(){

@@ -76,7 +76,7 @@ function serialize(form){
 			//break;
 			case "radio":
 			case "checkbox":
-				if(!ele.checked)break
+				if(!ele.checked)break;
 			default:
 				str=encodeURIComponent(ele.name)+"="+encodeURIComponent(ele.value);
 				a.push(str);

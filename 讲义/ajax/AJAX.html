@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var getXHR = (function () {
+        var list = [
+
+     function () {
+        return new XMLHttpRequest;
+    }, function () {
+        return new ActiveXObject('Microsoft.XMLHTTP');
+    }, function () {
+        return new ActiveXObject('Msxml2.XMLHTTP');
+    }, function () {
+        return new ActiveXObject('Msxml2.XMLHTTP');
+    }
+    ]
+
+    }());
+    var xhr=getXHR;
+    xhr.open("get","data.json",true);
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&/^2\d{2}$/.text(xhr.status)){
+
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -41,7 +41,7 @@
         // 自定义头信息
         headers: {},
         // success和error函数里的上下文对象
-        context: window
+        //context: window
     };
     // 省劲 省去了敲5次键盘
     // 核心函数
